@@ -4,7 +4,7 @@
 
 # Strictly, zip is an archive with compression; this technique creates single-file archives, useful mostly for Windows or specialist settings.
 core_dependency_requires '*' pigz
-swaddle_compress_zip()
+compress_zip()
 {
 	pigz -K -11 -c -q -f -- "$1" >"$1".gz
 }

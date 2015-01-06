@@ -3,7 +3,7 @@
 
 
 core_dependency_requires '*' lzma touch
-swaddle_compress_lzma()
+compress_lzma()
 {
 	lzma -9 -c -q -f "$1" >"$1".lzma
 	touch -r "$1" "$1".lzma

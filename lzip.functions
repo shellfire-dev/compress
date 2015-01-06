@@ -4,7 +4,7 @@
 
 # lzip beats xz on tarballs, even when xz uses --format=raw
 core_dependency_requires '*' plzip lzip touch
-swaddle_compress_lzip()
+compress_lzip()
 {
 	if core_compatibility_whichNoOutput lzip; then
 		lzip -9 -c -q -f "$1" >"$1".lz

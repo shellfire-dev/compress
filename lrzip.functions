@@ -3,7 +3,7 @@
 
 
 core_dependency_requires '*' lrzip touch
-swaddle_compress_lrzip()
+compress_lrzip()
 {
 	lrzip -q -k -f -z -L 9 -o "$1".lrz "$1"
 	touch -r "$1" "$1".lrz

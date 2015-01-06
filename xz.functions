@@ -4,7 +4,7 @@
 
 # pixz
 core_dependency_requires '*' pixz xz touch
-swaddle_compress_xz()
+compress_xz()
 {
 	# pixz is c. 4 bytes worse in 3M, but much faster
 	if core_compatibility_whichNoOutput pixz; then

@@ -2,50 +2,7 @@
 # Copyright © 2014-2015 The developers of shellfire compress. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/shellfire-dev/compress/master/COPYRIGHT.
 
 
-core_dependency_requires '*' rm
-swaddle_compress_variants_clean()
-{
-	local existingFilePath="$1"
-	
-	local compressor
-	for compressor in none lzop zip gzip bzip2 rzip lzma xz lzip zpaq lrzip
-	do
-		rm -f "$existingFilePath"$(swaddle_compress_extension "$compressor")
-	done
-}
-
-core_dependency_requires '*' rm
-swaddle_compress_variants()
-{
-	local namespace="$1"
-	local valueName="$2"
-	local originalFilePath="$3"
-	local callbackPerCompressedFile="$4"
-	shift 4
-
-	local keepUncompressedFile=no
-	_swaddle_compress_variants_callback()
-	{
-		local compressor="$core_variable_array_element"
-		if [ "$compressor" = 'none' ]; then
-			keepUncompressedFile=yes
-		else
-			swaddle_compress_${compressor} "$originalFilePath"
-		fi
-		local compressedFileName="$originalFilePath"$(swaddle_compress_extension "$compressor")
-		if [ -n "$callbackPerCompressedFile" ]; then
-			$callbackPerCompressedFile "$compressedFileName"
-		fi
-	}
-	
-	configure_iterateOverArrayWithDefaultsIfEmpty "$namespace" "$valueName" _swaddle_compress_variants_callback "$@"
-	
-	if core_variable_isFalse "$keepUncompressedFile"; then
-		rm "$originalFilePath"
-	fi
-}
-
-swaddle_compress_extension()
+compress_extension()
 {
 	case "$1" in
 		
@@ -96,7 +53,7 @@ swaddle_compress_extension()
 	esac
 }
 
-swaddle_compress_mimeType()
+compress_mimeType()
 {
 	case "$1" in
 		

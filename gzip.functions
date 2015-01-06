@@ -4,7 +4,7 @@
 
 core_dependency_requires '*' pigz zopfli gzip touch
 core_usesIn configure
-swaddle_compress_gzip()
+compress_gzip()
 {
 	local fileName="$1"
 	if core_compatibility_whichNoOutput pigz; then

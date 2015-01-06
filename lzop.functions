@@ -3,7 +3,7 @@
 
 
 core_dependency_requires '*' cat lzop touch
-swaddle_compress_lzop()
+compress_lzop()
 {
 	# This way seems odd but reduces compressed file size as mode, timestamp not stored (and unlike gzip, -n does not work for compression)
 	cat "$1" | lzop -9 -c -q >"$1".lzo

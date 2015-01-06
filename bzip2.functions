@@ -3,7 +3,7 @@
 
 
 core_dependency_requires '*' pbzip2 touch
-swaddle_compress_bzip2()
+compress_bzip2()
 {
 	if core_compatibility_whichNoOutput bzip2; then
 		bzip2 -9 -c -q -f "$1" >"$1".bz2

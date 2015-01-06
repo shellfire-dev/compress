@@ -3,7 +3,7 @@
 
 
 core_dependency_requires '*' rzip touch
-swaddle_compress_rzip()
+compress_rzip()
 {
 	rzip -9 -f -k -o "$1".rz "$1"
 	touch -r "$1" "$1".rz
