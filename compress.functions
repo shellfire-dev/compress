@@ -22,7 +22,7 @@ compress_extension()
 			printf '.gz'
 		;;
 		
-		zz)
+		zlib)
 			printf '.zz'
 		;;
 		
@@ -77,7 +77,7 @@ compress_mimeType()
 			printf 'application/gzip'
 		;;
 		
-		zz)
+		zlib)
 			printf 'application/x-deflate'
 		;;
 		
