@@ -4,7 +4,7 @@
 
 core_dependency_requires '*' pigz touch
 core_usesIn configure
-compress_gzip()
+compress_zlib()
 {
 	local fileName="$1"
 
