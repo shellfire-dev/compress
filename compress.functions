@@ -111,3 +111,58 @@ compress_mimeType()
 		
 	esac
 }
+
+compress_properName()
+{
+	case "$1" in
+		
+		none)
+			printf 'None'
+		;;
+		
+		lzop)
+			printf 'lzop'
+		;;
+		
+		zip)
+			printf 'ZIP'
+		;;
+		
+		gzip)
+			printf 'Gzip'
+		;;
+		
+		zlib)
+			printf 'zlib'
+		;;
+		
+		bzip2)
+			printf 'bzip2'
+		;;
+		
+		rzip)
+			printf 'rzip'
+		;;
+		
+		lzma)
+			printf 'LZMA'
+		;;
+		
+		xz)
+			printf 'xz'
+		;;
+		
+		lzip)
+			printf 'Lzip'
+		;;
+		
+		zpaq)
+			printf 'ZPAQ'
+		;;
+		
+		lrzip)
+			printf 'lrzip'
+		;;
+		
+	esac
+}

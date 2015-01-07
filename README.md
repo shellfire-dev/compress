@@ -76,7 +76,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_extension`
+#### `compress_extension()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`compressor`|Compressor as defined in Overview, or `none`|_No_|
@@ -88,7 +88,7 @@ local fileExtensionExcludingInitialPeriod="$(compress_extension 'gzip')"
 ```
 
 ***
-#### `compress_mimeType`
+#### `compress_mimeType()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`compressor`|Compressor as defined in Overview, or `none`|_No_|
@@ -101,6 +101,19 @@ local mimeType="$(compress_mimeType 'gzip')"
 
 ***
 
+#### `compress_properName()`
+|Parameter|Value|Optional|
+|---------|-----|--------|
+|`compressor`|Compressor as defined in Overview, or `none`|_No_|
+
+Returns a cased string reflecting the author(s) names for this compressor. Result is printed to standard out, so use captures, eg
+
+```bash
+# Produces `Gzip`
+local properName="$(compress_properName 'gzip')"
+```
+
+***
 ## Namespace `compress_bzip2`
 
 ### To use in code
@@ -122,7 +135,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_bzip2`
+#### `compress_bzip2()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -156,7 +169,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_gzip`
+#### `compress_gzip()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -190,7 +203,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_lrzip`
+#### `compress_lrzip()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -223,7 +236,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_lzip`
+#### `compress_lzip()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -258,7 +271,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_lzma`
+#### `compress_lzma()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -292,7 +305,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_lzop`
+#### `compress_lzop()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -326,7 +339,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_rzip`
+#### `compress_rzip()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -361,7 +374,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_xz`
+#### `compress_xz()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -395,7 +408,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_zip`
+#### `compress_zip()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -429,7 +442,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_zlib`
+#### `compress_zlib()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
@@ -462,7 +475,7 @@ _program()
 ### Functions
 
 ***
-#### `compress_zpaq`
+#### `compress_zpaq()`
 |Parameter|Value|Optional|
 |---------|-----|--------|
 |`uncompressedFilePath`|Extant uncompressed file path|_No_|
