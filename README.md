@@ -28,6 +28,7 @@ Currently, the following compressors are defined (in rough compressive power ord
 * `lzop`
 * `zip` (not a typo; creates a single-file zip archive)
 * `gzip`
+* `zlib`
 * `bzip2`
 * `rzip`
 * `lzma`
@@ -167,6 +168,7 @@ compress_gzip '/path/to/file'
 ```
 
 ***
+
 ## Namespace `compress_lrzip`
 
 ### To use in code
@@ -406,6 +408,39 @@ compress_zip '/path/to/file'
 
 ***
 
+## Namespace `compress_zlib`
+
+### To use in code
+
+If calling from another [shellfire] module, add to your shell code the line
+```bash
+core_usesIn compress zlib
+```
+in the global scope (ie outside of any functions). A good convention is to put it above any function that depends on functions in this module. If using it directly in a program, put this line _inside_ the `_program()` function:-
+
+```bash
+_program()
+{
+	core_usesIn compress zlib
+	…
+}
+```
+
+### Functions
+
+***
+#### `compress_zlib`
+|Parameter|Value|Optional|
+|---------|-----|--------|
+|`uncompressedFilePath`|Extant uncompressed file path|_No_|
+
+Compresses `uncompressedFilePath` to `uncompressedFilePath` + `.$(compress_extension zlib)`. Preserves `uncompressedFilePath`. Sets the compressed file's timestamp to match the uncompressed original.
+
+```bash
+compress_zlib '/path/to/file'
+```
+
+***
 ## Namespace `compress_zpaq`
 
 ### To use in code
