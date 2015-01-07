@@ -22,6 +22,10 @@ compress_extension()
 			printf '.gz'
 		;;
 		
+		zz)
+			printf '.zz'
+		;;
+		
 		bzip2)
 			printf '.bz2'
 		;;
@@ -71,6 +75,10 @@ compress_mimeType()
 		
 		gzip)
 			printf 'application/gzip'
+		;;
+		
+		zz)
+			printf 'application/x-deflate'
 		;;
 		
 		bzip2)
