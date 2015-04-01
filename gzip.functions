@@ -3,7 +3,6 @@
 
 
 core_dependency_requires '*' pigz zopfli gzip touch
-core_usesIn configure
 compress_gzip()
 {
 	local fileName="$1"
